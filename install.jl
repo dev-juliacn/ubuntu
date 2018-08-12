@@ -1,1 +1,3 @@
-using Pkg;Pkg.add("IJulia")
+using Pkg
+Pkg.add("IJulia")
+using IJulia
