@@ -36,3 +36,7 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
+```
+$ docker run --rm juliacn/ubuntu:julia julia -version
+julia version 1.0.0
+```
