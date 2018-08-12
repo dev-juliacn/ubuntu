@@ -14,3 +14,8 @@ docker run --rm -it juliacn/ubuntu
 # Julia 
 
 见[julia](https://github.com/JuliaCN/ubuntu/tree/julia)分支。
+
+# Julia 部分文档汉化
+
+见[julia.zh](https://github.com/JuliaCN/ubuntu/tree/julia.zh)分支。
+
