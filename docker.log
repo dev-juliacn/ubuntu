@@ -1,0 +1,695 @@
+Sending build context to Docker daemon  207.9kB
+Step 1/8 : FROM juliacn/ubuntu:latest
+latest: Pulling from juliacn/ubuntu
+c64513b74145: Already exists
+01b8b12bad90: Already exists
+c5d85cf7a05f: Already exists
+b6b268720157: Already exists
+e12192999ff1: Already exists
+85fa2596a9b4: Pulling fs layer
+8c022a972eba: Pulling fs layer
+8c022a972eba: Verifying Checksum
+8c022a972eba: Download complete
+85fa2596a9b4: Verifying Checksum
+85fa2596a9b4: Download complete
+85fa2596a9b4: Pull complete
+8c022a972eba: Pull complete
+Digest: sha256:db77f1b4cd4975c9e159f7d8cdc21af16145430f77b02626b569948fee7cea5f
+Status: Downloaded newer image for juliacn/ubuntu:latest
+ ---> f4e22b3af0ff
+Step 2/8 : RUN set -eux; 	apt-get update; 	apt-get install -y --no-install-recommends 		ca-certificates 		curl 	; 	rm -rf /var/lib/apt/lists/*
+ ---> Running in c778b71c0ac1
+[91m+ apt-get update
+[0mHit:1 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:2 http://archive.ubuntu.com/ubuntu bionic InRelease
+Hit:3 http://archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:4 http://archive.ubuntu.com/ubuntu bionic-backports InRelease
+Reading package lists...
+[91m+ apt-get install -y --no-install-recommends ca-certificates curl
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libasn1-8-heimdal libcurl4 libgssapi-krb5-2 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libk5crypto3 libkeyutils1 libkrb5-26-heimdal libkrb5-3
+  libkrb5support0 libldap-2.4-2 libldap-common libnghttp2-14 libpsl5
+  libroken18-heimdal librtmp1 libsasl2-2 libsasl2-modules-db libwind0-heimdal
+  openssl
+Suggested packages:
+  krb5-doc krb5-user
+Recommended packages:
+  krb5-locales publicsuffix libsasl2-modules
+The following NEW packages will be installed:
+  ca-certificates curl libasn1-8-heimdal libcurl4 libgssapi-krb5-2
+  libgssapi3-heimdal libhcrypto4-heimdal libheimbase1-heimdal
+  libheimntlm0-heimdal libhx509-5-heimdal libk5crypto3 libkeyutils1
+  libkrb5-26-heimdal libkrb5-3 libkrb5support0 libldap-2.4-2 libldap-common
+  libnghttp2-14 libpsl5 libroken18-heimdal librtmp1 libsasl2-2
+  libsasl2-modules-db libwind0-heimdal openssl
+0 upgraded, 25 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2796 kB of archives.
+After this operation, 8730 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 openssl amd64 1.1.0g-2ubuntu4.1 [532 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic/main amd64 ca-certificates all 20180409 [151 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkrb5support0 amd64 1.16-2build1 [31.1 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libk5crypto3 amd64 1.16-2build1 [85.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkeyutils1 amd64 1.5.9-9.2ubuntu2 [8720 B]
+Get:6 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkrb5-3 amd64 1.16-2build1 [279 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgssapi-krb5-2 amd64 1.16-2build1 [122 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpsl5 amd64 0.19.1-5build1 [41.8 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/main amd64 libroken18-heimdal amd64 7.5.0+dfsg-1 [41.3 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 libasn1-8-heimdal amd64 7.5.0+dfsg-1 [175 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 libheimbase1-heimdal amd64 7.5.0+dfsg-1 [29.3 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhcrypto4-heimdal amd64 7.5.0+dfsg-1 [85.9 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/main amd64 libwind0-heimdal amd64 7.5.0+dfsg-1 [47.8 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic/main amd64 libhx509-5-heimdal amd64 7.5.0+dfsg-1 [107 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic/main amd64 libkrb5-26-heimdal amd64 7.5.0+dfsg-1 [206 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic/main amd64 libheimntlm0-heimdal amd64 7.5.0+dfsg-1 [14.8 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic/main amd64 libgssapi3-heimdal amd64 7.5.0+dfsg-1 [96.5 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic/main amd64 libsasl2-modules-db amd64 2.1.27~101-g0780600+dfsg-3ubuntu2 [14.8 kB]
+Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 libsasl2-2 amd64 2.1.27~101-g0780600+dfsg-3ubuntu2 [49.2 kB]
+Get:20 http://archive.ubuntu.com/ubuntu bionic/main amd64 libldap-common all 2.4.45+dfsg-1ubuntu1 [16.6 kB]
+Get:21 http://archive.ubuntu.com/ubuntu bionic/main amd64 libldap-2.4-2 amd64 2.4.45+dfsg-1ubuntu1 [155 kB]
+Get:22 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnghttp2-14 amd64 1.30.0-1ubuntu1 [77.8 kB]
+Get:23 http://archive.ubuntu.com/ubuntu bionic/main amd64 librtmp1 amd64 2.4+20151223.gitfa8646d.1-1 [54.2 kB]
+Get:24 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.2 [214 kB]
+Get:25 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.2 [159 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 2796 kB in 2s (1627 kB/s)
+Selecting previously unselected package openssl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 6616 files and directories currently installed.)
+Preparing to unpack .../00-openssl_1.1.0g-2ubuntu4.1_amd64.deb ...
+Unpacking openssl (1.1.0g-2ubuntu4.1) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../01-ca-certificates_20180409_all.deb ...
+Unpacking ca-certificates (20180409) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../02-libkrb5support0_1.16-2build1_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.16-2build1) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../03-libk5crypto3_1.16-2build1_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.16-2build1) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../04-libkeyutils1_1.5.9-9.2ubuntu2_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.5.9-9.2ubuntu2) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../05-libkrb5-3_1.16-2build1_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.16-2build1) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../06-libgssapi-krb5-2_1.16-2build1_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.16-2build1) ...
+Selecting previously unselected package libpsl5:amd64.
+Preparing to unpack .../07-libpsl5_0.19.1-5build1_amd64.deb ...
+Unpacking libpsl5:amd64 (0.19.1-5build1) ...
+Selecting previously unselected package libroken18-heimdal:amd64.
+Preparing to unpack .../08-libroken18-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libroken18-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libasn1-8-heimdal:amd64.
+Preparing to unpack .../09-libasn1-8-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libasn1-8-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libheimbase1-heimdal:amd64.
+Preparing to unpack .../10-libheimbase1-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libheimbase1-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libhcrypto4-heimdal:amd64.
+Preparing to unpack .../11-libhcrypto4-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libhcrypto4-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libwind0-heimdal:amd64.
+Preparing to unpack .../12-libwind0-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libwind0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libhx509-5-heimdal:amd64.
+Preparing to unpack .../13-libhx509-5-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libhx509-5-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libkrb5-26-heimdal:amd64.
+Preparing to unpack .../14-libkrb5-26-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libkrb5-26-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libheimntlm0-heimdal:amd64.
+Preparing to unpack .../15-libheimntlm0-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libheimntlm0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libgssapi3-heimdal:amd64.
+Preparing to unpack .../16-libgssapi3-heimdal_7.5.0+dfsg-1_amd64.deb ...
+Unpacking libgssapi3-heimdal:amd64 (7.5.0+dfsg-1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../17-libsasl2-modules-db_2.1.27~101-g0780600+dfsg-3ubuntu2_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../18-libsasl2-2_2.1.27~101-g0780600+dfsg-3ubuntu2_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
+Selecting previously unselected package libldap-common.
+Preparing to unpack .../19-libldap-common_2.4.45+dfsg-1ubuntu1_all.deb ...
+Unpacking libldap-common (2.4.45+dfsg-1ubuntu1) ...
+Selecting previously unselected package libldap-2.4-2:amd64.
+Preparing to unpack .../20-libldap-2.4-2_2.4.45+dfsg-1ubuntu1_amd64.deb ...
+Unpacking libldap-2.4-2:amd64 (2.4.45+dfsg-1ubuntu1) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../21-libnghttp2-14_1.30.0-1ubuntu1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.30.0-1ubuntu1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../22-librtmp1_2.4+20151223.gitfa8646d.1-1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1) ...
+Selecting previously unselected package libcurl4:amd64.
+Preparing to unpack .../23-libcurl4_7.58.0-2ubuntu3.2_amd64.deb ...
+Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.2) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../24-curl_7.58.0-2ubuntu3.2_amd64.deb ...
+Unpacking curl (7.58.0-2ubuntu3.2) ...
+Setting up libnghttp2-14:amd64 (1.30.0-1ubuntu1) ...
+Setting up libldap-common (2.4.45+dfsg-1ubuntu1) ...
+Setting up libpsl5:amd64 (0.19.1-5build1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
+Setting up libsasl2-2:amd64 (2.1.27~101-g0780600+dfsg-3ubuntu2) ...
+Setting up libroken18-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up librtmp1:amd64 (2.4+20151223.gitfa8646d.1-1) ...
+Setting up libkrb5support0:amd64 (1.16-2build1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libheimbase1-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up openssl (1.1.0g-2ubuntu4.1) ...
+Setting up libkeyutils1:amd64 (1.5.9-9.2ubuntu2) ...
+Setting up ca-certificates (20180409) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.26.1 /usr/local/share/perl/5.26.1 /usr/lib/x86_64-linux-gnu/perl5/5.26 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.26 /usr/share/perl/5.26 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs...
+133 added, 0 removed; done.
+Setting up libk5crypto3:amd64 (1.16-2build1) ...
+Setting up libwind0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libasn1-8-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libhcrypto4-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libhx509-5-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libkrb5-3:amd64 (1.16-2build1) ...
+Setting up libkrb5-26-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libheimntlm0-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libgssapi-krb5-2:amd64 (1.16-2build1) ...
+Setting up libgssapi3-heimdal:amd64 (7.5.0+dfsg-1) ...
+Setting up libldap-2.4-2:amd64 (2.4.45+dfsg-1ubuntu1) ...
+Setting up libcurl4:amd64 (7.58.0-2ubuntu3.2) ...
+Setting up curl (7.58.0-2ubuntu3.2) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for ca-certificates (20180409) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+[91m+ rm -rf /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_source_Sources.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_restricted_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_source_Sources.lz4 /var/lib/apt/lists/auxfiles /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_InRelease /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_source_Sources.lz4
+[0mRemoving intermediate container c778b71c0ac1
+ ---> 11ddce3e7a57
+Step 3/8 : ENV JULIA_PATH /usr/local/julia
+ ---> Running in ce96ac9279d7
+Removing intermediate container ce96ac9279d7
+ ---> 1c1fe907f2ca
+Step 4/8 : ENV PATH $JULIA_PATH/bin:$PATH
+ ---> Running in 941054f08e69
+Removing intermediate container 941054f08e69
+ ---> 7a5646fea24d
+Step 5/8 : ENV JULIA_GPG 3673DF529D9049477F76B37566E3C7DC03D6E495
+ ---> Running in e8502078624b
+Removing intermediate container e8502078624b
+ ---> 9e527f237e3d
+Step 6/8 : ENV JULIA_VERSION 1.0.0
+ ---> Running in b068792c7bf3
+Removing intermediate container b068792c7bf3
+ ---> 3ebfec9372b9
+Step 7/8 : RUN set -eux; 		savedAptMark="$(apt-mark showmanual)"; 	if ! command -v gpg > /dev/null; then 		apt-get update; 		apt-get install -y --no-install-recommends 			gnupg 			dirmngr 		; 		rm -rf /var/lib/apt/lists/*; 	fi; 		dpkgArch="$(dpkg --print-architecture)"; 	case "${dpkgArch##*-}" in 		amd64) tarArch='x86_64'; dirArch='x64'; sha256='bea4570d7358016d8ed29d2c15787dbefaea3e746c570763e7ad6040f17831f3' ;; 		armhf) tarArch='armv7l'; dirArch='armv7l'; sha256='61e855e93c3bfe5e4f486a54a4c45194f4b020922e56af5fc104ff3fd3d8e41a' ;; 		i386) tarArch='i686'; dirArch='x86'; sha256='c8c607a7682bfe08b5511aac616c3b393038e52edf4dbaac5e69727c4f1eaa8b' ;; 		*) echo >&2 "error: current architecture ($dpkgArch) does not have a corresponding Julia binary release"; exit 1 ;; 	esac; 		folder="$(echo "$JULIA_VERSION" | cut -d. -f1-2)"; 	curl -fL -o julia.tar.gz.asc "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz.asc"; 	curl -fL -o julia.tar.gz     "https://julialang-s3.julialang.org/bin/linux/${dirArch}/${folder}/julia-${JULIA_VERSION}-linux-${tarArch}.tar.gz"; 		echo "${sha256} *julia.tar.gz" | sha256sum -c -; 		export GNUPGHOME="$(mktemp -d)"; 	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$JULIA_GPG"; 	gpg --batch --verify julia.tar.gz.asc julia.tar.gz; 	command -v gpgconf > /dev/null && gpgconf --kill all; 	rm -rf "$GNUPGHOME" julia.tar.gz.asc; 		mkdir "$JULIA_PATH"; 	tar -xzf julia.tar.gz -C "$JULIA_PATH" --strip-components 1; 	rm julia.tar.gz; 		apt-mark auto '.*' > /dev/null; 	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; 		julia --version
+ ---> Running in bd3cc70280ad
+[91m+ apt-mark showmanual
+[0m[91m+ savedAptMark=adduser
+apt
+base-files
+base-passwd
+bash
+bsdutils
+bzip2
+ca-certificates
+coreutils
+curl
+dash
+debconf
+debianutils
+diffutils
+dpkg
+e2fsprogs
+fdisk
+findutils
+gcc-8-base
+gpgv
+grep
+gzip
+hostname
+init-system-helpers
+libacl1
+libapt-pkg5.0
+libattr1
+libaudit-common
+libaudit1
+libblkid1
+libbz2-1.0
+libc-bin
+libc6
+libcap-ng0
+libcom-err2
+libdb5.3
+libdebconfclient0
+libext2fs2
+libfdisk1
+libffi6
+libgcc1
+libgcrypt20
+libgmp10
+libgnutls30
+libgpg-error0
+libhogweed4
+libidn2-0
+liblz4-1
+liblzma5
+libmount1
+libncurses5
+libncursesw5
+libnettle6
+libp11-kit0
+libpam-modules
+libpam-modules-bin
+libpam-runtime
+libpam0g
+libpcre3
+libprocps6
+libseccomp2
+libselinux1
+libsemanage-common
+libsemanage1
+libsepol1
+libsmartcols1
+libss2
+libstdc++6
+libsystemd0
+libtasn1-6
+libtinfo5
+libudev1
+libunistring2
+libuuid1
+libzstd1
+login
+lsb-base
+mawk
+mount
+ncurses-base
+ncurses-bin
+passwd
+perl-base
+procps
+sed
+sensible-utils
+sysvinit-utils
+tar
+ubuntu-keyring
+util-linux
+vim
+zlib1g
++ command -v gpg
+[0m[91m+ apt-get update
+[0mGet:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [14.3 kB]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [1364 B]
+Get:5 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [58.2 kB]
+Get:6 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [167 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/universe Sources [11.5 MB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/universe Sources [62.1 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [355 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [3926 B]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [197 kB]
+Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [2807 B]
+Fetched 25.8 MB in 10s (2599 kB/s)
+Reading package lists...
+[91m+ apt-get install -y --no-install-recommends gnupg dirmngr
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client gpg-wks-server gpgconf
+  gpgsm libassuan0 libksba8 libnpth0 pinentry-curses
+Suggested packages:
+  dbus-user-session libpam-systemd pinentry-gnome3 tor parcimonie xloadimage
+  scdaemon pinentry-doc
+The following NEW packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client
+  gpg-wks-server gpgconf gpgsm libassuan0 libksba8 libnpth0 pinentry-curses
+0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+Need to get 2121 kB of archives.
+After this operation, 6015 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu bionic/main amd64 libassuan0 amd64 2.5.1-2 [35.0 kB]
+Get:2 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpgconf amd64 2.2.4-1ubuntu1.1 [123 kB]
+Get:3 http://archive.ubuntu.com/ubuntu bionic/main amd64 libksba8 amd64 1.3.5-2 [92.6 kB]
+Get:4 http://archive.ubuntu.com/ubuntu bionic/main amd64 libnpth0 amd64 1.5-3 [7668 B]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 dirmngr amd64 2.2.4-1ubuntu1.1 [316 kB]
+Get:6 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg-l10n all 2.2.4-1ubuntu1.1 [49.5 kB]
+Get:7 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg-utils amd64 2.2.4-1ubuntu1.1 [127 kB]
+Get:8 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg amd64 2.2.4-1ubuntu1.1 [467 kB]
+Get:9 http://archive.ubuntu.com/ubuntu bionic/main amd64 pinentry-curses amd64 1.1.0-1 [35.8 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-agent amd64 2.2.4-1ubuntu1.1 [227 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-wks-client amd64 2.2.4-1ubuntu1.1 [91.8 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpg-wks-server amd64 2.2.4-1ubuntu1.1 [84.9 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gpgsm amd64 2.2.4-1ubuntu1.1 [215 kB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 gnupg amd64 2.2.4-1ubuntu1.1 [249 kB]
+[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0mFetched 2121 kB in 1s (1571 kB/s)
+Selecting previously unselected package libassuan0:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7077 files and directories currently installed.)
+Preparing to unpack .../00-libassuan0_2.5.1-2_amd64.deb ...
+Unpacking libassuan0:amd64 (2.5.1-2) ...
+Selecting previously unselected package gpgconf.
+Preparing to unpack .../01-gpgconf_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpgconf (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package libksba8:amd64.
+Preparing to unpack .../02-libksba8_1.3.5-2_amd64.deb ...
+Unpacking libksba8:amd64 (1.3.5-2) ...
+Selecting previously unselected package libnpth0:amd64.
+Preparing to unpack .../03-libnpth0_1.5-3_amd64.deb ...
+Unpacking libnpth0:amd64 (1.5-3) ...
+Selecting previously unselected package dirmngr.
+Preparing to unpack .../04-dirmngr_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking dirmngr (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gnupg-l10n.
+Preparing to unpack .../05-gnupg-l10n_2.2.4-1ubuntu1.1_all.deb ...
+Unpacking gnupg-l10n (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gnupg-utils.
+Preparing to unpack .../06-gnupg-utils_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gnupg-utils (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gpg.
+Preparing to unpack .../07-gpg_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpg (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package pinentry-curses.
+Preparing to unpack .../08-pinentry-curses_1.1.0-1_amd64.deb ...
+Unpacking pinentry-curses (1.1.0-1) ...
+Selecting previously unselected package gpg-agent.
+Preparing to unpack .../09-gpg-agent_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpg-agent (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gpg-wks-client.
+Preparing to unpack .../10-gpg-wks-client_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpg-wks-client (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gpg-wks-server.
+Preparing to unpack .../11-gpg-wks-server_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpg-wks-server (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gpgsm.
+Preparing to unpack .../12-gpgsm_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gpgsm (2.2.4-1ubuntu1.1) ...
+Selecting previously unselected package gnupg.
+Preparing to unpack .../13-gnupg_2.2.4-1ubuntu1.1_amd64.deb ...
+Unpacking gnupg (2.2.4-1ubuntu1.1) ...
+Setting up libnpth0:amd64 (1.5-3) ...
+Setting up libksba8:amd64 (1.3.5-2) ...
+Setting up gnupg-l10n (2.2.4-1ubuntu1.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up libassuan0:amd64 (2.5.1-2) ...
+Setting up gpgconf (2.2.4-1ubuntu1.1) ...
+Setting up gpgsm (2.2.4-1ubuntu1.1) ...
+Setting up gnupg-utils (2.2.4-1ubuntu1.1) ...
+Setting up pinentry-curses (1.1.0-1) ...
+Setting up dirmngr (2.2.4-1ubuntu1.1) ...
+Setting up gpg (2.2.4-1ubuntu1.1) ...
+Setting up gpg-agent (2.2.4-1ubuntu1.1) ...
+Setting up gpg-wks-server (2.2.4-1ubuntu1.1) ...
+Setting up gpg-wks-client (2.2.4-1ubuntu1.1) ...
+Setting up gnupg (2.2.4-1ubuntu1.1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+[91m+ rm -rf /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-backports_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic-updates_universe_source_Sources.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_InRelease /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_restricted_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_bionic_universe_source_Sources.lz4 /var/lib/apt/lists/auxfiles /var/lib/apt/lists/lock /var/lib/apt/lists/partial /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_InRelease /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_main_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_multiverse_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_binary-amd64_Packages.lz4 /var/lib/apt/lists/security.ubuntu.com_ubuntu_dists_bionic-security_universe_source_Sources.lz4
+[0m[91m+ dpkg --print-architecture
+[0m[91m+ dpkgArch=amd64
++ tarArch=x86_64
++ dirArch=x64
++ sha256=bea4570d7358016d8ed29d2c15787dbefaea3e746c570763e7ad6040f17831f3
+[0m[91m+ echo 1.0.0
+[0m[91m+ cut -d. -f1-2
+[0m[91m+ folder=1.0
++ curl -fL -o julia.tar.gz.asc https://julialang-s3.julialang.org/bin/linux/x64/1.0/julia-1.0.0-linux-x86_64.tar.gz.asc
+[0m[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m100   866  100   866    0     0    991      0 --:--:-- --:--:-- --:--:--   991
+[0m[91m+ curl -fL -o julia.tar.gz https://julialang-s3.julialang.org/bin/linux/x64/1.0/julia-1.0.0-linux-x86_64.tar.gz
+[0m[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0 84.7M    0 16053    0     0  34822      0  0:42:32 --:--:--  0:42:32 34746[0m[91m  2 84.7M    2 2309k    0     0  1587k      0  0:00:54  0:00:01  0:00:53 1586k[0m[91m  5 84.7M    5 4790k    0     0  1952k      0  0:00:44  0:00:02  0:00:42[0m[91m 1951k[0m[91m  8 84.7M    8 7497k    0     0  2170k      0  0:00:39  0:00:03  0:00:36 2170k[0m[91m 11 84.7M   11 9849k    0     0  2208k      0  0:00:39  0:00:04  0:00:35 2208k[0m[91m 14 84.7M   14 11.9M    0     0  2248k      0  0:00:38  0:00:05  0:00:33 2453k[0m[91m 16 84.7M   16 14.3M    0     0  2282k      0  0:00:38  0:00:06  0:00:32 2484k[0m[91m 20 84.7M   20 17.1M    0     0  2362k      0  0:00:36  0:00:07  0:00:29 2563k[0m[91m 23 84.7M   23 19.7M    0     0[0m[91m  2389k      0  0:00:36  0:00:08  0:00:28 2540k[0m[91m 26 84.7M   26 22.3M    0     0  2417k      0  0:00:35  0:00:09  0:00:26 2604k[0m[91m 29 84.7M   29 25.0M    0     0  2457k      0  0:00:35  0:00:10  0:00:25 2684k[0m[91m 32 84.7M   32 27.9M    0     0  2495k      0  0:00:34  0:00:11  0:00:23 2771k[0m[91m 35 84.7M   35 30.1M    0     0  2481k      0  0:00:34  0:00:12  0:00:22 2659k[0m[91m 38 84.7M   38 32.9M    0     0  2507k      0  0:00:34  0:00:13  0:00:21 2707k[0m[91m 42 84.7M   42 35.7M    0     0  2534k      0  0:00:34  0:00:14  0:00:20 2755k[0m[91m 45 84.7M   45 38.5M    0     0  2552k      0  0:00:34  0:00:15  0:00:19 2751k[0m[91m 48 84.7M   48 41.4M    0     0  2576k      0  0:00:33  0:00:16  0:00:17 2761k[0m[91m 52 84.7M   52 44.1M    0     0  2590k      0  0:00:33  0:00:17  0:00:16 2860k[0m[91m 55 84.7M   55 46.8M    0     0  2601k      0  0:00:33  0:00:18  0:00:15 2854k[0m[91m 58 84.7M   58 49.8M    0     0  2622k      0  0:00:33  0:00:19  0:00:14 2876k[0m[91m 62 84.7M   62 52.5M    0     0  2632k      0  0:00:32  0:00:20  0:00:12 2880k[0m[91m 64 84.7M   64 54.8M    0     0  2619k      0  0:00:33  0:00:21  0:00:12 2761k[0m[91m 67 84.7M   67 57.4M    0     0  2619k      0  0:00:33  0:00:22  0:00:11 2719k[0m[91m 69 84.7M   69 58.9M    0     0  2573k      0  0:00:33  0:00:23  0:00:10 2470k[0m[91m[0m[91m 72[0m[91m [0m[91m8[0m[91m4[0m[91m.[0m[91m7[0m[91mM[0m[91m   [0m[91m72 [0m[91m6[0m[91m1.3[0m[91mM    0     0  [0m[91m2[0m[91m5[0m[91m6[0m[91m9[0m[91mk[0m[91m [0m[91m     0  0:00:3[0m[91m3[0m[91m [0m[91m [0m[91m0:0[0m[91m0:[0m[91m2[0m[91m4[0m[91m  0:[0m[91m0[0m[91m0[0m[91m:[0m[91m0[0m[91m9 2[0m[91m361k[0m[91m 74 8[0m[91m4.7M[0m[91m [0m[91m  74[0m[91m 62.[0m[91m9M[0m[91m  [0m[91m  0  [0m[91m   0  2514k   [0m[91m   0  0[0m[91m:00:34  0:00:25  0:00:09 2045k[0m[91m 77 84.7M   77 65.6M    0     0  2541k      0  0:00:34  0:00:26  0:00:08 2208k[0m[91m 80 84.7M   80 68.1M    0     0  2540k      0  0:00:34  0:00:27  0:00:07 2188k[0m[91m 83 84.7M   83 70.8M    0     0  2548k      0  0:00:34  0:00:28  0:00:06 2431k[0m[91m 86 84.7M   86 73.5M    0     0  2557k      0  0:00:33  0:00:29  0:00:04 2499k[0m[91m 89 84.7M   89 76.2M    0     0  2564k      0  0:00:33  0:00:30  0:00:03 2833k[0m[91m 92 84.7M   92 78.7M    0     0  2564k      0  0:00:33  0:00:31  0:00:02 2681k[0m[91m 95 84.7M   95 80.9M    0     0  2531k      0  0:00:34  0:00:32  0:00:02 2482k[0m[91m 98 84.7M   98 83.3M    0     0  2550k      0  0:00:34  0:00:33  0:00:01 2560k[0m[91m100 8[0m[91m4.7M  [0m[91m100[0m[91m 8[0m[91m4[0m[91m.7[0m[91mM    0     0  2550k      0  0:00:34[0m[91m  [0m[91m0:00:[0m[91m34 --:[0m[91m--:-- [0m[91m2506k
+[0m[91m+ echo bea4570d7358016d8ed29d2c15787dbefaea3e746c570763e7ad6040f17831f3 *julia.tar.gz
+[0m[91m+ sha256sum -c -
+[0mjulia.tar.gz: OK
+[91m+ mktemp -d
+[0m[91m+ export GNUPGHOME=/tmp/tmp.ZP7UJqdxe5
++ gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 3673DF529D9049477F76B37566E3C7DC03D6E495
+[0m[91mgpg: keybox '/tmp/tmp.ZP7UJqdxe5/pubring.kbx' created
+[0m[91mgpg: key 66E3C7DC03D6E495: 1 signature not checked due to a missing key
+[0m[91mgpg: /tmp/tmp.ZP7UJqdxe5/trustdb.gpg: trustdb created
+[0m[91mgpg: key 66E3C7DC03D6E495: public key "Julia (Binary signing key) <buildbot@julialang.org>" imported
+[0m[91mgpg: no ultimately trusted keys found
+gpg: Total number processed: 1
+gpg:               imported: 1
+[0m[91m+ gpg --batch --verify julia.tar.gz.asc julia.tar.gz
+[0m[91mgpg: Signature made Thu Aug  9 10:06:17 2018 UTC
+gpg:                using RSA key 3673DF529D9049477F76B37566E3C7DC03D6E495
+gpg:                issuer "buildbot@julialang.org"
+[0m[91mgpg: Good signature from "Julia (Binary signing key) <buildbot@julialang.org>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 3673 DF52 9D90 4947 7F76  B375 66E3 C7DC 03D6 E495
+[0m[91m+ command -v gpgconf
++ gpgconf --kill all
+[0m[91m+ rm -rf /tmp/tmp.ZP7UJqdxe5 julia.tar.gz.asc
+[0m[91m+ mkdir /usr/local/julia
+[0m[91m+ tar -xzf julia.tar.gz -C /usr/local/julia --strip-components 1
+[0m[91m+ rm julia.tar.gz
+[0m[91m+ apt-mark auto .*
+[0m[91m+ [ -z adduser
+apt
+base-files
+base-passwd
+bash
+bsdutils
+bzip2
+ca-certificates
+coreutils
+curl
+dash
+debconf
+debianutils
+diffutils
+dpkg
+e2fsprogs
+fdisk
+findutils
+gcc-8-base
+gpgv
+grep
+gzip
+hostname
+init-system-helpers
+libacl1
+libapt-pkg5.0
+libattr1
+libaudit-common
+libaudit1
+libblkid1
+libbz2-1.0
+libc-bin
+libc6
+libcap-ng0
+libcom-err2
+libdb5.3
+libdebconfclient0
+libext2fs2
+libfdisk1
+libffi6
+libgcc1
+libgcrypt20
+libgmp10
+libgnutls30
+libgpg-error0
+libhogweed4
+libidn2-0
+liblz4-1
+liblzma5
+libmount1
+libncurses5
+libncursesw5
+libnettle6
+libp11-kit0
+libpam-modules
+libpam-modules-bin
+libpam-runtime
+libpam0g
+libpcre3
+libprocps6
+libseccomp2
+libselinux1
+libsemanage-common
+libsemanage1
+libsepol1
+libsmartcols1
+libss2
+libstdc++6
+libsystemd0
+libtasn1-6
+libtinfo5
+libudev1
+libunistring2
+libuuid1
+libzstd1
+login
+lsb-base
+mawk
+mount
+ncurses-base
+ncurses-bin
+passwd
+perl-base
+procps
+sed
+sensible-utils
+sysvinit-utils
+tar
+ubuntu-keyring
+util-linux
+vim
+zlib1g ]
++ apt-mark manual adduser apt base-files base-passwd bash bsdutils bzip2 ca-certificates coreutils curl dash debconf debianutils diffutils dpkg e2fsprogs fdisk findutils gcc-8-base gpgv grep gzip hostname init-system-helpers libacl1 libapt-pkg5.0 libattr1 libaudit-common libaudit1 libblkid1 libbz2-1.0 libc-bin libc6 libcap-ng0 libcom-err2 libdb5.3 libdebconfclient0 libext2fs2 libfdisk1 libffi6 libgcc1 libgcrypt20 libgmp10 libgnutls30 libgpg-error0 libhogweed4 libidn2-0 liblz4-1 liblzma5 libmount1 libncurses5 libncursesw5 libnettle6 libp11-kit0 libpam-modules libpam-modules-bin libpam-runtime libpam0g libpcre3 libprocps6 libseccomp2 libselinux1 libsemanage-common libsemanage1 libsepol1 libsmartcols1 libss2 libstdc++6 libsystemd0 libtasn1-6 libtinfo5 libudev1 libunistring2 libuuid1 libzstd1 login lsb-base mawk mount ncurses-base ncurses-bin passwd perl-base procps sed sensible-utils sysvinit-utils tar ubuntu-keyring util-linux vim zlib1g
+[0madduser set to manually installed.
+apt set to manually installed.
+base-files set to manually installed.
+base-passwd set to manually installed.
+bash set to manually installed.
+bsdutils set to manually installed.
+bzip2 set to manually installed.
+ca-certificates set to manually installed.
+coreutils set to manually installed.
+curl set to manually installed.
+dash set to manually installed.
+debconf set to manually installed.
+debianutils set to manually installed.
+diffutils set to manually installed.
+dpkg set to manually installed.
+e2fsprogs set to manually installed.
+fdisk set to manually installed.
+findutils set to manually installed.
+gcc-8-base set to manually installed.
+gpgv set to manually installed.
+grep set to manually installed.
+gzip set to manually installed.
+hostname set to manually installed.
+init-system-helpers set to manually installed.
+libacl1 set to manually installed.
+libapt-pkg5.0 set to manually installed.
+libattr1 set to manually installed.
+libaudit-common set to manually installed.
+libaudit1 set to manually installed.
+libblkid1 set to manually installed.
+libbz2-1.0 set to manually installed.
+libc-bin set to manually installed.
+libc6 set to manually installed.
+libcap-ng0 set to manually installed.
+libcom-err2 set to manually installed.
+libdb5.3 set to manually installed.
+libdebconfclient0 set to manually installed.
+libext2fs2 set to manually installed.
+libfdisk1 set to manually installed.
+libffi6 set to manually installed.
+libgcc1 set to manually installed.
+libgcrypt20 set to manually installed.
+libgmp10 set to manually installed.
+libgnutls30 set to manually installed.
+libgpg-error0 set to manually installed.
+libhogweed4 set to manually installed.
+libidn2-0 set to manually installed.
+liblz4-1 set to manually installed.
+liblzma5 set to manually installed.
+libmount1 set to manually installed.
+libncurses5 set to manually installed.
+libncursesw5 set to manually installed.
+libnettle6 set to manually installed.
+libp11-kit0 set to manually installed.
+libpam-modules set to manually installed.
+libpam-modules-bin set to manually installed.
+libpam-runtime set to manually installed.
+libpam0g set to manually installed.
+libpcre3 set to manually installed.
+libprocps6 set to manually installed.
+libseccomp2 set to manually installed.
+libselinux1 set to manually installed.
+libsemanage-common set to manually installed.
+libsemanage1 set to manually installed.
+libsepol1 set to manually installed.
+libsmartcols1 set to manually installed.
+libss2 set to manually installed.
+libstdc++6 set to manually installed.
+libsystemd0 set to manually installed.
+libtasn1-6 set to manually installed.
+libtinfo5 set to manually installed.
+libudev1 set to manually installed.
+libunistring2 set to manually installed.
+libuuid1 set to manually installed.
+libzstd1 set to manually installed.
+login set to manually installed.
+lsb-base set to manually installed.
+mawk set to manually installed.
+mount set to manually installed.
+ncurses-base set to manually installed.
+ncurses-bin set to manually installed.
+passwd set to manually installed.
+perl-base set to manually installed.
+procps set to manually installed.
+sed set to manually installed.
+sensible-utils set to manually installed.
+sysvinit-utils set to manually installed.
+tar set to manually installed.
+ubuntu-keyring set to manually installed.
+util-linux set to manually installed.
+vim set to manually installed.
+zlib1g set to manually installed.
+[91m+ apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false
+[0mReading package lists...
+Building dependency tree...
+Reading state information...
+The following packages will be REMOVED:
+  dirmngr* file* gnupg* gnupg-l10n* gnupg-utils* gpg* gpg-agent*
+  gpg-wks-client* gpg-wks-server* gpgconf* gpgsm* libassuan0* libksba8*
+  libmagic-mgc* libmagic1* libnpth0* pinentry-curses*
+0 upgraded, 0 newly installed, 17 to remove and 0 not upgraded.
+After this operation, 11.3 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7270 files and directories currently installed.)
+Removing gnupg (2.2.4-1ubuntu1.1) ...
+Removing gpg-wks-client (2.2.4-1ubuntu1.1) ...
+Removing dirmngr (2.2.4-1ubuntu1.1) ...
+Removing file (1:5.32-2ubuntu0.1) ...
+Removing gnupg-l10n (2.2.4-1ubuntu1.1) ...
+Removing gnupg-utils (2.2.4-1ubuntu1.1) ...
+Removing gpg-wks-server (2.2.4-1ubuntu1.1) ...
+Removing gpg (2.2.4-1ubuntu1.1) ...
+Removing gpg-agent (2.2.4-1ubuntu1.1) ...
+Removing gpgsm (2.2.4-1ubuntu1.1) ...
+Removing gpgconf (2.2.4-1ubuntu1.1) ...
+Removing pinentry-curses (1.1.0-1) ...
+Removing libassuan0:amd64 (2.5.1-2) ...
+Removing libksba8:amd64 (1.3.5-2) ...
+Removing libmagic1:amd64 (1:5.32-2ubuntu0.1) ...
+Removing libmagic-mgc (1:5.32-2ubuntu0.1) ...
+Removing libnpth0:amd64 (1.5-3) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 7053 files and directories currently installed.)
+Purging configuration files for gpg-agent (2.2.4-1ubuntu1.1) ...
+Purging configuration files for libmagic1:amd64 (1:5.32-2ubuntu0.1) ...
+Purging configuration files for dirmngr (2.2.4-1ubuntu1.1) ...
+[91m+ julia --version
+[0mjulia version 1.0.0
+Removing intermediate container bd3cc70280ad
+ ---> 8ef8b2c40575
+Step 8/8 : CMD ["julia"]
+ ---> Running in e04023cd57ec
+Removing intermediate container e04023cd57ec
+ ---> caa55f1456fb
+Successfully built caa55f1456fb
+Successfully tagged juliacn/ubuntu:julia
