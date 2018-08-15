@@ -1,6 +1,6 @@
 NAMESPACE=juliacn
 IMAGE=ubuntu
-TAG=julia
+TAG=julia.gr
 
 run:
 	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG)
