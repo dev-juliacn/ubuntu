@@ -1,41 +1,23 @@
-Sending build context to Docker daemon  226.3kB
-Step 1/5 : FROM juliacn/ubuntu:julia
+Sending build context to Docker daemon  242.7kB
+Step 1/7 : FROM juliacn/ubuntu:julia
  ---> caa55f1456fb
-Step 2/5 : RUN apt-get update -y
+Step 2/7 : RUN apt-get update -y
  ---> Using cache
  ---> ecda1c74ccc9
-Step 3/5 : RUN apt-get install -qy libxt6 libxrender1 libgl1-mesa-glx # for GR
+Step 3/7 : RUN apt-get install -qy libxt6 libxrender1 libgl1-mesa-glx # for GR
  ---> Using cache
  ---> e78b943ea06b
-Step 4/5 : COPY install.jl .
+Step 4/7 : COPY install.jl .
+ ---> Using cache
  ---> 28f92e59f53b
-Step 5/5 : RUN julia install.jl
- ---> Running in dae460e1d0c5
-   Cloning default registries into /root/.julia/registries
-   Cloning registry General from "https://github.com/JuliaRegistries/General.git"
-[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [======================================>  ]  93.9 %[2K[?25h  Updating registry at `~/.julia/registries/General`
-  Updating git-repo `https://github.com/JuliaRegistries/General.git`
-[?25l[2K[?25h Resolving package versions...
- Installed GR ─ v0.32.2
-  Updating `~/.julia/environments/v1.0/Project.toml`
-  [28b8d3ca] + GR v0.32.2
-  Updating `~/.julia/environments/v1.0/Manifest.toml`
-  [28b8d3ca] + GR v0.32.2
-  [2a0f44e3] + Base64 
-  [8bb1440f] + DelimitedFiles 
-  [8ba89e20] + Distributed 
-  [b77e0a4c] + InteractiveUtils 
-  [8f399da3] + Libdl 
-  [37e2e46d] + LinearAlgebra 
-  [56ddb016] + Logging 
-  [d6f4376e] + Markdown 
-  [a63ad114] + Mmap 
-  [9a3f8284] + Random 
-  [9e88b42a] + Serialization 
-  [6462fe0b] + Sockets 
-  [8dfed614] + Test 
-  Building GR → `~/.julia/packages/GR/crXzk/deps/build.log`
-Removing intermediate container dae460e1d0c5
- ---> 61235542edfb
-Successfully built 61235542edfb
+Step 5/7 : COPY test.jl .
+ ---> Using cache
+ ---> c04cb2fd81e4
+Step 6/7 : RUN julia install.jl
+ ---> Using cache
+ ---> d2b0e34add01
+Step 7/7 : RUN julia test.jl
+ ---> Using cache
+ ---> e8738d12d48d
+Successfully built e8738d12d48d
 Successfully tagged juliacn/ubuntu:julia.gr

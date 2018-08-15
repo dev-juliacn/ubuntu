@@ -1,6 +1,9 @@
 # ubuntu
 
+https://hub.docker.com/r/juliacn/ubuntu/tags/
+
 支持GR的JuliaCN ubuntu docker images (juliacn/ubuntu:julia.gr)
+
 
 # 使用方法
 
@@ -40,5 +43,6 @@ julia>
 
 ```
 
+![test.svg](test.svg)
 
 [docker入门](https://docs.docker.com/get-started/)

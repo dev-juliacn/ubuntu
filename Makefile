@@ -10,4 +10,5 @@ bash:
 
 build:
 	docker build -t $(NAMESPACE)/$(IMAGE):$(TAG) . | tee docker.log
+	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) cat test.svg > test.svg
 
