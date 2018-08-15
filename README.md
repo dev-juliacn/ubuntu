@@ -1,14 +1,20 @@
-# ubuntu
+# juliacn/ubuntu:julia.basic
 
 https://hub.docker.com/r/juliacn/ubuntu/tags/
 
-支持GR的JuliaCN ubuntu docker images (juliacn/ubuntu:julia.gr)
+预先安装了以下基本包的JuliaCN ubuntu docker images (juliacn/ubuntu:julia.basic) 
 
+- [Revise](https://github.com/timholy/Revise.jl)
+- [BenchmarkTools](https://github.com/JuliaCI/BenchmarkTools.jl)
+- [StaticArrays](https://github.com/JuliaArrays/StaticArrays.jl)
+- [UnicodePlots](https://github.com/Evizero/UnicodePlots.jl)
+
+链接来自[Reddit讨论](https://www.reddit.com/r/IAmA/comments/97jdb9/weve_spent_the_past_9_years_developing_a_new/e48olwm/)
 
 # 使用方法
 
 ```
-$ docker run --rm -it juliacn/ubuntu:julia.gr
+docker run --rm -it juliacn/ubuntu:julia.basic
                _
    _       _ _(_)_     |  Documentation: https://docs.julialang.org
   (_)     | (_) (_)    |
@@ -18,31 +24,37 @@ $ docker run --rm -it juliacn/ubuntu:julia.gr
  _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 |__/                   |
 
-julia> using GR
+julia> using Revise
 
-julia> ENV["GKSwstype"]="svg" # to avoid GUI
-"svg"
+julia> using BenchmarkTools
 
-julia> plot(rand(10), rand(10))
+julia> using StaticArrays
 
-julia> savefig("test.svg")
+julia> using UnicodePlots
 
-shell> head test.svg
-<?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="450" viewBox="0 0 600 450">
-<defs>
-  <clipPath id="clip2400">
-    <rect x="75" y="33" width="481" height="361"/>
-  </clipPath>
-</defs>
-<defs>
-  <clipPath id="clip2401">
-    <rect x="0" y="0" width="600" height="450"/>
+julia> lineplot([sin, cos], -π, π)
+           ┌────────────────────────────────────────┐       
+         1 │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠚⠉⡏⠓⡄⠀⠀⡠⠚⠉⠉⠲⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀│ sin(x)
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⠀⡇⠀⠈⢆⡜⠁⠀⠀⠀⠀⠙⢄⠀⠀⠀⠀⠀⠀⠀⠀│ cos(x)
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠁⠀⠀⠀⡇⠀⠀⡸⡆⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠃⠀⠀⠀⠀⡇⠀⢰⠁⠘⡄⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠏⠀⠀⠀⠀⠀⡇⢀⠇⠀⠀⠱⡀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⡇⡎⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⢇⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⠁⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠘⡄⠀⠀⠀⠀│       
+   f(x)    │⠤⠤⠤⠤⣤⠤⠤⠤⠤⠤⠤⢤⠧⠤⠤⠤⠤⠤⠤⢤⡧⠤⠤⠤⠤⠤⠤⠼⡤⠤⠤⠤⠤⠤⠤⠵⠤⠤⠤⠄│       
+           │⠀⠀⠀⠀⠸⡄⠀⠀⠀⠀⠀⡜⠀⠀⠀⠀⠀⠀⠀⡎⡇⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⣰⠁⠀⠀⠀⠀⠀⠀⡸⠀⡇⠀⠀⠀⠀⠀⠀⠀⠈⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⢇⠀⠀⢠⠇⠀⠀⠀⠀⠀⠀⢠⠃⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠘⡄⢀⡞⠀⠀⠀⠀⠀⠀⢀⠎⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢱⠀⠀⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⠀⠸⡜⠀⠀⠀⠀⠀⠀⠀⡜⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⠀⠀⠀│       
+           │⠀⠀⠀⠀⠀⠀⢀⡜⠑⣄⠀⠀⠀⠀⢀⡜⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢣⡀⠀⠀⠀⠀⠀⠀│       
+        -1 │⠀⠀⠀⠀⣀⡠⠎⠀⠀⠈⠦⣀⣀⡤⠊⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⢄⡀⠀⠀⠀⠀│       
+           └────────────────────────────────────────┘       
+           -4                                       4
+                               x
 
-julia> 
 
 ```
 
-![test.svg](test.svg)
 
 [docker入门](https://docs.docker.com/get-started/)

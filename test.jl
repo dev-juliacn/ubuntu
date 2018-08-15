@@ -1,5 +1,5 @@
-using GR
-
-ENV["GKSwstype"]="svg" # to avoid GUI
-plot(rand(10), rand(10))
-savefig("test.svg")
+import Pkg
+Pkg.test("Revise")
+Pkg.test("BenchmarkTools")
+Pkg.test("StaticArrays")
+Pkg.test("UnicodePlots")
