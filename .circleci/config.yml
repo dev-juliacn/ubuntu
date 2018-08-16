@@ -7,13 +7,18 @@ jobs:
   build:
     docker:
       - image: circleci/python:3.6.1
-      
+
+    steps:
+      - checkout      
       - run:
           command: |
             docker build -t juliacn/ubuntu . 
   test:
     docker:
       - image: circleci/python:3.6.1
+
+    steps:
+      - checkout      
       - run: 
           command: |
             docker run --rm juliacn/ubuntu cat /ect/os-release
