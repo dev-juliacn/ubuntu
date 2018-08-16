@@ -18,7 +18,7 @@ jobs:
           name: check version
           command: 'make version'
 
-      - test: 
+      - run: 
           name: test
           command: 'make test'
 
