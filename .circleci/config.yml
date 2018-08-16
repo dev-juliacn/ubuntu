@@ -18,3 +18,11 @@ jobs:
           name: check version
           command: 'make version'
 
+      - run: 
+          name: login
+          command: 'docker login -u $DOCKER_USER -p $DOCKER_PASS' 
+
+      - run: 
+          name: push
+          command: 'make push'
+

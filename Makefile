@@ -14,3 +14,5 @@ bash:
 build:
 	docker build -t $(NAMESPACE)/$(IMAGE):$(TAG) . | tee docker.log
 
+push:
+	docker push $(NAMESPACE)/$(IMAGE):$(TAG) 
