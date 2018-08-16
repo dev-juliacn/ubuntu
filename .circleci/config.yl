@@ -17,3 +17,12 @@ jobs:
       - run: 
           command: |
             docker run --rm juliacn/ubuntu cat /ect/os-release
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
