@@ -1,0 +1,28 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.1
+    steps:
+      - checkout      
+      - setup_remote_docker
+      - run:
+          name: build
+          command: 'make build'
+
+      - run: 
+          name: check version
+          command: 'make version'
+
+      - run: 
+          name: login
+          command: 'docker login -u $DOCKER_USER -p $DOCKER_PASS' 
+
+      - run: 
+          name: push
+          command: 'make push'
+
