@@ -11,8 +11,8 @@ jobs:
     steps:
       - checkout      
       - run:
-          command: |
-            docker build -t juliacn/ubuntu . 
+          name: build
+          command: 'docker build -t juliacn/ubuntu . '
   test:
     docker:
       - image: circleci/python:3.6.1
@@ -20,8 +20,8 @@ jobs:
     steps:
       - checkout      
       - run: 
-          command: |
-            docker run --rm juliacn/ubuntu cat /ect/os-release
+          name: check version
+          command: 'docker run --rm juliacn/ubuntu cat /ect/os-release'
 
 workflows:
   version: 2
