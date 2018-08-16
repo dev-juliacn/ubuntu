@@ -9,11 +9,7 @@ jobs:
       - image: circleci/python:3.6.1
     steps:
       - checkout      
-      - run:
-          name: Start container 
-          command: |
-            set -x
-            docker-compose up -d
+      - setup_remote_docker
       - run:
           name: build
           command: 'docker build -t juliacn/ubuntu . '
