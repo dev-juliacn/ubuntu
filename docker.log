@@ -1,35 +1,35 @@
-Sending build context to Docker daemon  187.4kB
+Sending build context to Docker daemon  352.3kB
 Step 1/3 : FROM ubuntu:latest
 latest: Pulling from library/ubuntu
 Digest: sha256:3f119dc0737f57f704ebecac8a6d8477b0f6ca1ca0332c7ee1395ed2c6a82be7
 Status: Downloaded newer image for ubuntu:latest
  ---> 735f80812f90
 Step 2/3 : RUN apt-get update -y
- ---> Running in 72535407984e
+ ---> Running in 7124adc06a35
 Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
 Get:2 http://archive.ubuntu.com/ubuntu bionic InRelease [242 kB]
-Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [14.3 kB]
-Get:4 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [1364 B]
-Get:5 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [167 kB]
-Get:6 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [58.2 kB]
-Get:7 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:3 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [15.0 kB]
+Get:4 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [183 kB]
+Get:5 http://archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:6 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [1364 B]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [60.4 kB]
 Get:8 http://archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
 Get:9 http://archive.ubuntu.com/ubuntu bionic/universe Sources [11.5 MB]
-Get:10 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
-Get:11 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
-Get:12 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
-Get:13 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
-Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/universe Sources [62.1 kB]
-Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [197 kB]
-Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [3926 B]
-Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [355 kB]
+Get:10 http://archive.ubuntu.com/ubuntu bionic/restricted amd64 Packages [13.5 kB]
+Get:11 http://archive.ubuntu.com/ubuntu bionic/main amd64 Packages [1344 kB]
+Get:12 http://archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [186 kB]
+Get:13 http://archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [11.3 MB]
+Get:14 http://archive.ubuntu.com/ubuntu bionic-updates/universe Sources [63.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [372 kB]
+Get:16 http://archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [200 kB]
+Get:17 http://archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [3926 B]
 Get:18 http://archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [2807 B]
-Fetched 25.8 MB in 10s (2541 kB/s)
+Fetched 25.8 MB in 6s (4027 kB/s)
 Reading package lists...
-Removing intermediate container 72535407984e
- ---> 754c5b0d59c2
+Removing intermediate container 7124adc06a35
+ ---> 279cf20b853f
 Step 3/3 : RUN apt-get install -qy vim
- ---> Running in 4a3d03020e50
+ ---> Running in 1ae9cc30dfba
 Reading package lists...
 Building dependency tree...
 Reading state information...
@@ -66,7 +66,7 @@ Get:17 http://archive.ubuntu.com/ubuntu bionic/main amd64 libpython3.6 amd64 3.6
 Get:18 http://archive.ubuntu.com/ubuntu bionic/main amd64 vim-runtime all 2:8.0.1453-1ubuntu1 [5437 kB]
 Get:19 http://archive.ubuntu.com/ubuntu bionic/main amd64 vim amd64 2:8.0.1453-1ubuntu1 [1152 kB]
 [91mdebconf: delaying package configuration, since apt-utils is not installed
-[0mFetched 12.7 MB in 5s (2728 kB/s)
+[0mFetched 12.7 MB in 3s (4311 kB/s)
 Selecting previously unselected package libmagic-mgc.
 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4037 files and directories currently installed.)
 Preparing to unpack .../00-libmagic-mgc_1%3a5.32-2ubuntu0.1_amd64.deb ...
@@ -197,7 +197,7 @@ update-alternatives: warning: skip creation of /usr/share/man/ru/man1/editor.1.g
 update-alternatives: warning: skip creation of /usr/share/man/ja/man1/editor.1.gz because associated file /usr/share/man/ja/man1/vim.1.gz (of link group editor) doesn't exist
 update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
 Processing triggers for libc-bin (2.27-3ubuntu1) ...
-Removing intermediate container 4a3d03020e50
- ---> f4e22b3af0ff
-Successfully built f4e22b3af0ff
+Removing intermediate container 1ae9cc30dfba
+ ---> ff43875d3dd8
+Successfully built ff43875d3dd8
 Successfully tagged juliacn/ubuntu:latest

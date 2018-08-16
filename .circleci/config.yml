@@ -12,9 +12,9 @@ jobs:
       - setup_remote_docker
       - run:
           name: build
-          command: 'docker build -t juliacn/ubuntu . '
+          command: 'make build'
 
       - run: 
           name: check version
-          command: 'docker run --rm juliacn/ubuntu cat /etc/os-release'
+          command: 'make version'
 
