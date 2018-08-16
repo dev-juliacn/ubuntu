@@ -2,6 +2,9 @@ NAMESPACE=juliacn
 IMAGE=ubuntu
 TAG=julia.basic
 
+version:
+	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) julia -e 'using InteractiveUtils;versioninfo(verbose=true)'
+
 run:
 	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG)
 
@@ -13,3 +16,6 @@ build:
 
 test:
 	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) julia test.jl | tee test.log
+
+push:
+	docker push $(NAMESPACE)/$(IMAGE):$(TAG)
