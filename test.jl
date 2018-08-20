@@ -1,4 +1,2 @@
 import Pkg
-Pkg.test("BenchmarkTools")
-Pkg.test("StaticArrays")
-Pkg.test("UnicodePlots")
+Pkg.test("PyCall")

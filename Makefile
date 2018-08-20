@@ -1,6 +1,6 @@
 NAMESPACE=juliacn
 IMAGE=ubuntu
-TAG=julia.basic
+TAG=julia.pycall
 
 version:
 	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) julia -e 'using InteractiveUtils;versioninfo(verbose=true)'

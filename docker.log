@@ -1,27 +1,36 @@
-Sending build context to Docker daemon  374.3kB
+Sending build context to Docker daemon  405.5kB
 Step 1/4 : FROM juliacn/ubuntu:julia
- ---> caa55f1456fb
+ ---> 231c635e1bdd
 Step 2/4 : COPY install.jl .
- ---> 38b1623802af
+ ---> c33b448f3ebc
 Step 3/4 : COPY test.jl .
- ---> 9706a15467a1
+ ---> 4db6d90bacf5
 Step 4/4 : RUN julia install.jl
- ---> Running in bb4c6822bca5
+ ---> Running in 230c693329c5
    Cloning default registries into /root/.julia/registries
    Cloning registry General from "https://github.com/JuliaRegistries/General.git"
-[?25l    Fetching: [>                                        ]  0.0 %    Resolving Deltas: [====>                                    ]  9.0 %[2K[?25h  Updating registry at `~/.julia/registries/General`
+[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [======================================>  ]  93.4 %[2K[?25h  Updating registry at `~/.julia/registries/General`
   Updating git-repo `https://github.com/JuliaRegistries/General.git`
-[?25l[2K[?25h   Cloning git-repo `https://github.com/juliacn/BenchmarkTools.jl`
-[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/juliacn/BenchmarkTools.jl`
-[?25l[2K[?25h Resolving package versions...
- Installed JSON ─ v0.19.0
+[?25l[2K[?25h   Cloning git-repo `https://github.com/JuliaPy/PyCall.jl`
+[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/JuliaPy/PyCall.jl`
+[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h Resolving package versions...
+ Installed Conda ────────── v1.0.1
+ Installed Compat ───────── v1.0.1
+ Installed VersionParsing ─ v1.1.2
+ Installed MacroTools ───── v0.4.4
+ Installed JSON ─────────── v0.19.0
   Updating `~/.julia/environments/v1.0/Project.toml`
-  [6e4b80f9] + BenchmarkTools v0.4.0+ #master (https://github.com/juliacn/BenchmarkTools.jl)
+  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
   Updating `~/.julia/environments/v1.0/Manifest.toml`
-  [6e4b80f9] + BenchmarkTools v0.4.0+ #master (https://github.com/juliacn/BenchmarkTools.jl)
+  [34da2185] + Compat v1.0.1
+  [8f4d0f93] + Conda v1.0.1
   [682c06a0] + JSON v0.19.0
+  [1914dd2f] + MacroTools v0.4.4
+  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
+  [81def892] + VersionParsing v1.1.2
   [2a0f44e3] + Base64 
   [ade2ca70] + Dates 
+  [8bb1440f] + DelimitedFiles 
   [8ba89e20] + Distributed 
   [b77e0a4c] + InteractiveUtils 
   [76f85450] + LibGit2 
@@ -36,35 +45,16 @@ Step 4/4 : RUN julia install.jl
   [9a3f8284] + Random 
   [ea8e919c] + SHA 
   [9e88b42a] + Serialization 
+  [1a1011a3] + SharedArrays 
   [6462fe0b] + Sockets 
   [2f01184e] + SparseArrays 
   [10745b16] + Statistics 
   [8dfed614] + Test 
   [cf7118a7] + UUIDs 
   [4ec0a83e] + Unicode 
-   Cloning git-repo `https://github.com/juliacn/StaticArrays.jl`
-[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/juliacn/StaticArrays.jl`
-[?25l[2K[?25h Resolving package versions...
-  Updating `~/.julia/environments/v1.0/Project.toml`
-  [90137ffa] + StaticArrays v0.8.3+ #master (https://github.com/juliacn/StaticArrays.jl)
-  Updating `~/.julia/environments/v1.0/Manifest.toml`
-  [90137ffa] + StaticArrays v0.8.3+ #master (https://github.com/juliacn/StaticArrays.jl)
-   Cloning git-repo `https://github.com/juliacn/UnicodePlots.jl`
-[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/juliacn/UnicodePlots.jl`
-[?25l[2K[?25h Resolving package versions...
- Installed Missings ────────── v0.3.0
- Installed DataStructures ──── v0.11.0
- Installed StatsBase ───────── v0.25.0
- Installed SortingAlgorithms ─ v0.3.1
-  Updating `~/.julia/environments/v1.0/Project.toml`
-  [b8865327] + UnicodePlots v0.3.1+ #master (https://github.com/juliacn/UnicodePlots.jl)
-  Updating `~/.julia/environments/v1.0/Manifest.toml`
-  [864edb3b] + DataStructures v0.11.0
-  [e1d29d7a] + Missings v0.3.0
-  [a2af1166] + SortingAlgorithms v0.3.1
-  [2913bbd2] + StatsBase v0.25.0
-  [b8865327] + UnicodePlots v0.3.1+ #master (https://github.com/juliacn/UnicodePlots.jl)
-Removing intermediate container bb4c6822bca5
- ---> 9e7a1955f667
-Successfully built 9e7a1955f667
-Successfully tagged juliacn/ubuntu:julia.basic
+  Building Conda ─→ `~/.julia/packages/Conda/m7vem/deps/build.log`
+  Building PyCall → `~/.julia/packages/PyCall/0s2IJ/deps/build.log`
+Removing intermediate container 230c693329c5
+ ---> d368176c6b66
+Successfully built d368176c6b66
+Successfully tagged juliacn/ubuntu:julia.pycall
