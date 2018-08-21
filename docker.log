@@ -1,32 +1,28 @@
-Sending build context to Docker daemon  405.5kB
+Sending build context to Docker daemon    257kB
 Step 1/4 : FROM juliacn/ubuntu:julia
  ---> 231c635e1bdd
 Step 2/4 : COPY install.jl .
- ---> c33b448f3ebc
+ ---> 2327915cf307
 Step 3/4 : COPY test.jl .
- ---> 4db6d90bacf5
+ ---> 57d096a02cbf
 Step 4/4 : RUN julia install.jl
- ---> Running in 230c693329c5
+ ---> Running in 761c276a5608
    Cloning default registries into /root/.julia/registries
    Cloning registry General from "https://github.com/JuliaRegistries/General.git"
-[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [======================================>  ]  93.4 %[2K[?25h  Updating registry at `~/.julia/registries/General`
+[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [===================================>     ]  86.2 %[2K[?25h  Updating registry at `~/.julia/registries/General`
   Updating git-repo `https://github.com/JuliaRegistries/General.git`
-[?25l[2K[?25h   Cloning git-repo `https://github.com/JuliaPy/PyCall.jl`
-[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/JuliaPy/PyCall.jl`
+[?25l[2K[?25h   Cloning git-repo `https://github.com/JuliaPy/Conda.jl`
+[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/JuliaPy/Conda.jl`
 [?25l    Fetching: [>                                        ]  0.0 %[2K[?25h Resolving package versions...
- Installed Conda ────────── v1.0.1
- Installed Compat ───────── v1.0.1
  Installed VersionParsing ─ v1.1.2
- Installed MacroTools ───── v0.4.4
  Installed JSON ─────────── v0.19.0
+ Installed Compat ───────── v1.0.1
   Updating `~/.julia/environments/v1.0/Project.toml`
-  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
+  [8f4d0f93] + Conda v1.0.1+ #master (https://github.com/JuliaPy/Conda.jl)
   Updating `~/.julia/environments/v1.0/Manifest.toml`
   [34da2185] + Compat v1.0.1
-  [8f4d0f93] + Conda v1.0.1
+  [8f4d0f93] + Conda v1.0.1+ #master (https://github.com/JuliaPy/Conda.jl)
   [682c06a0] + JSON v0.19.0
-  [1914dd2f] + MacroTools v0.4.4
-  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
   [81def892] + VersionParsing v1.1.2
   [2a0f44e3] + Base64 
   [ade2ca70] + Dates 
@@ -52,9 +48,55 @@ Step 4/4 : RUN julia install.jl
   [8dfed614] + Test 
   [cf7118a7] + UUIDs 
   [4ec0a83e] + Unicode 
-  Building Conda ─→ `~/.julia/packages/Conda/m7vem/deps/build.log`
+  Building Conda → `~/.julia/packages/Conda/m7vem/deps/build.log`
+   Cloning git-repo `https://github.com/JuliaPy/PyCall.jl`
+[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/JuliaPy/PyCall.jl`
+[?25l    Fetching: [>                                        ]  0.0 %[2K[?25h Resolving package versions...
+ Installed MacroTools ─ v0.4.4
+  Updating `~/.julia/environments/v1.0/Project.toml`
+  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
+  Updating `~/.julia/environments/v1.0/Manifest.toml`
+  [1914dd2f] + MacroTools v0.4.4
+  [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
   Building PyCall → `~/.julia/packages/PyCall/0s2IJ/deps/build.log`
-Removing intermediate container 230c693329c5
- ---> d368176c6b66
-Successfully built d368176c6b66
+Collecting cython
+  Downloading https://files.pythonhosted.org/packages/19/8e/32b280abb0947a96cdbb8329fb2014851a21fc1d099009f946ea8a8202c3/Cython-0.28.5-cp36-cp36m-manylinux1_x86_64.whl (3.4MB)
+Installing collected packages: cython
+Successfully installed cython-0.28.5
+[91mYou are using pip version 10.0.1, however version 18.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[0mCollecting pip
+  Downloading https://files.pythonhosted.org/packages/5f/25/e52d3f31441505a5f3af41213346e5b6c221c9e086a166f3703d2ddaf940/pip-18.0-py2.py3-none-any.whl (1.3MB)
+Installing collected packages: pip
+  Found existing installation: pip 10.0.1
+    Uninstalling pip-10.0.1:
+      Successfully uninstalled pip-10.0.1
+Successfully installed pip-18.0
+Package      Version  
+------------ ---------
+asn1crypto   0.24.0   
+certifi      2018.8.13
+cffi         1.11.5   
+chardet      3.0.4    
+conda        4.5.10   
+cryptography 2.2.2    
+Cython       0.28.5   
+idna         2.6      
+mkl-fft      1.0.4    
+mkl-random   1.0.1    
+numpy        1.15.0   
+pip          18.0     
+pycosat      0.6.3    
+pycparser    2.18     
+pyOpenSSL    18.0.0   
+PySocks      1.6.8    
+requests     2.18.4   
+ruamel-yaml  0.15.37  
+setuptools   39.2.0   
+six          1.11.0   
+urllib3      1.22     
+wheel        0.31.1   
+Removing intermediate container 761c276a5608
+ ---> c541ccc3718b
+Successfully built c541ccc3718b
 Successfully tagged juliacn/ubuntu:julia.pycall

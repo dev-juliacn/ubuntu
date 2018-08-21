@@ -1,7 +1,7 @@
    Testing PyCall
-    Status `/tmp/tmpbpaJ45/Manifest.toml`
+    Status `/tmp/tmptBNQpx/Manifest.toml`
   [34da2185] Compat v1.0.1
-  [8f4d0f93] Conda v1.0.1
+  [8f4d0f93] Conda v1.0.1+ #master (https://github.com/JuliaPy/Conda.jl)
   [682c06a0] JSON v0.19.0
   [1914dd2f] MacroTools v0.4.4
   [438e738f] PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
@@ -36,7 +36,7 @@
 └ ENV[PYTHONEXECUTABLE]=
 [ Info: Installing zmq via the Conda pyzmq package...
 [ Info: Running `conda install -y pyzmq` in root environment
-Solving environment: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Solving environment: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
 
 ## Package Plan ##
 
@@ -50,9 +50,9 @@ The following packages will be downloaded:
 
     package                    |            build
     ---------------------------|-----------------
-    libsodium-1.0.16           |       h1bed415_0         302 KB
     pyzmq-17.1.2               |   py36h14c3975_0         454 KB
     zeromq-4.2.5               |       hf484d3e_0         567 KB
+    libsodium-1.0.16           |       h1bed415_0         302 KB
     ------------------------------------------------------------
                                            Total:         1.3 MB
 
@@ -64,14 +64,14 @@ The following NEW packages will be INSTALLED:
 
 
 Downloading and Extracting Packages
-libsodium-1.0.16     | 302 KB    | :   0% 0/1 [00:00<?, ?it/s]libsodium-1.0.16     | 302 KB    | :  16% 0.15872431531732267/1 [00:00<00:00,  1.55it/s]libsodium-1.0.16     | 302 KB    | :  96% 0.9550189072848752/1 [00:00<00:00,  2.04it/s] libsodium-1.0.16     | 302 KB    | : 100% 1.0/1 [00:00<00:00,  4.51it/s]               
-pyzmq-17.1.2         | 454 KB    | :   0% 0/1 [00:00<?, ?it/s]pyzmq-17.1.2         | 454 KB    | :  53% 0.5286718882767611/1 [00:00<00:00,  4.41it/s]pyzmq-17.1.2         | 454 KB    | :  86% 0.8601399767243252/1 [00:00<00:00,  3.90it/s]pyzmq-17.1.2         | 454 KB    | : 100% 1.0/1 [00:00<00:00,  3.57it/s]               
-zeromq-4.2.5         | 567 KB    | :   0% 0/1 [00:00<?, ?it/s]zeromq-4.2.5         | 567 KB    | :  51% 0.5079898785111283/1 [00:00<00:00,  5.04it/s]zeromq-4.2.5         | 567 KB    | :  96% 0.9581347418899762/1 [00:00<00:00,  4.86it/s]zeromq-4.2.5         | 567 KB    | : 100% 1.0/1 [00:00<00:00,  4.54it/s]               
-Preparing transaction: | done
-Verifying transaction: - done
-Executing transaction: | done
+pyzmq-17.1.2         | 454 KB    | :   0% 0/1 [00:00<?, ?it/s]pyzmq-17.1.2         | 454 KB    | :   5% 0.05286718882767611/1 [00:00<00:01,  1.93s/it]pyzmq-17.1.2         | 454 KB    | :  83% 0.8337063823104872/1 [00:00<00:00,  1.39s/it] pyzmq-17.1.2         | 454 KB    | : 100% 1.0/1 [00:00<00:00,  3.04it/s]               
+zeromq-4.2.5         | 567 KB    | :   0% 0/1 [00:00<?, ?it/s]zeromq-4.2.5         | 567 KB    | :  51% 0.5079898785111283/1 [00:00<00:00,  5.05it/s]zeromq-4.2.5         | 567 KB    | :  97% 0.9722455718486186/1 [00:00<00:00,  4.92it/s]zeromq-4.2.5         | 567 KB    | : 100% 1.0/1 [00:00<00:00,  4.57it/s]               
+libsodium-1.0.16     | 302 KB    | :   0% 0/1 [00:00<?, ?it/s]libsodium-1.0.16     | 302 KB    | :  94% 0.9351783678702098/1 [00:00<00:00,  9.32it/s]libsodium-1.0.16     | 302 KB    | : 100% 1.0/1 [00:00<00:00,  6.83it/s]               
+Preparing transaction: - done
+Verifying transaction: | done
+Executing transaction: - done
 [ Info: Running `conda remove -y pyzmq` in root environment
-Solving environment: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
+Solving environment: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
 
 ## Package Plan ##
 
@@ -85,9 +85,9 @@ The following packages will be REMOVED:
 
     pyzmq: 17.1.2-py36h14c3975_0
 
-Preparing transaction: - done
-Verifying transaction: | done
-Executing transaction: - done
+Preparing transaction: / done
+Verifying transaction: \ done
+Executing transaction: / done
 Test Summary: | Pass  Total
 PyCall        |  429    429
 Test Summary: | Pass  Total
