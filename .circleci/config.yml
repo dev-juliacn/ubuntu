@@ -15,14 +15,6 @@ jobs:
           command: 'make build'
 
       - run: 
-          name: check version
-          command: 'make version'
-
-      - run: 
-          name: test
-          command: 'make test'
-
-      - run: 
           name: login
           command: 'docker login -u $DOCKER_USER -p $DOCKER_PASS' 
 
