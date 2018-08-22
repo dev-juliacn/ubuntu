@@ -3,9 +3,14 @@ IMAGE=ubuntu
 TAG=julia.ijulia
 
 run:
-	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG)
+	docker run -p 8888:8888 -v `pwd`/home:/home --rm -it $(NAMESPACE)/$(IMAGE):$(TAG)
+
+bash:
+	docker run -v `pwd`/home:/home --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) bash
 
 build:
-	docker build -t $(NAMESPACE)/$(IMAGE):$(TAG) . | tee docker.log
-	docker run --rm $(NAMESPACE)/$(IMAGE):$(TAG) julia -e 'using IJulia'
+	docker build --no-cache -t $(NAMESPACE)/$(IMAGE):$(TAG) . | tee docker.log
+
+push:
+	docker push $(NAMESPACE)/$(IMAGE):$(TAG)
 

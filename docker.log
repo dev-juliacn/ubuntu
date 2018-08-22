@@ -1,35 +1,34 @@
-Sending build context to Docker daemon  120.3kB
-Step 1/3 : FROM juliacn/ubuntu:julia
- ---> fe6f93ad4411
-Step 2/3 : COPY install.jl .
- ---> Using cache
- ---> 3d759e57dbab
-Step 3/3 : RUN julia install.jl
- ---> Running in 4c47d0dc4de6
+Sending build context to Docker daemon  325.1kB
+Step 1/5 : FROM juliacn/ubuntu:julia
+ ---> 231c635e1bdd
+Step 2/5 : COPY install.jl .
+ ---> cc48e1730c81
+Step 3/5 : RUN julia install.jl
+ ---> Running in 89760c2607ee
    Cloning default registries into /root/.julia/registries
    Cloning registry General from "https://github.com/JuliaRegistries/General.git"
-[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [======================================>  ]  93.8 %[2K[?25h  Updating registry at `~/.julia/registries/General`
+[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [===========>                             ]  26.2 %    Fetching: [==================>                      ]  43.6 %    Fetching: [=========================>               ]  60.3 %    Fetching: [================================>        ]  78.6 %[2K[?25h  Updating registry at `~/.julia/registries/General`
   Updating git-repo `https://github.com/JuliaRegistries/General.git`
 [?25l[2K[?25h Resolving package versions...
- Installed VersionParsing ─ v1.1.1
- Installed JSON ─────────── v0.19.0
  Installed Conda ────────── v1.0.1
- Installed BinaryProvider ─ v0.4.0
- Installed ZMQ ──────────── v0.6.3
- Installed Compat ───────── v1.0.1
- Installed IJulia ───────── v1.9.2
+ Installed JSON ─────────── v0.19.0
  Installed MbedTLS ──────── v0.6.0
+ Installed VersionParsing ─ v1.1.2
+ Installed BinaryProvider ─ v0.4.1
+ Installed Compat ───────── v1.0.1
+ Installed ZMQ ──────────── v0.6.4
+ Installed IJulia ───────── v1.9.3
   Updating `~/.julia/environments/v1.0/Project.toml`
-  [7073ff75] + IJulia v1.9.2
+  [7073ff75] + IJulia v1.9.3
   Updating `~/.julia/environments/v1.0/Manifest.toml`
-  [b99e7846] + BinaryProvider v0.4.0
+  [b99e7846] + BinaryProvider v0.4.1
   [34da2185] + Compat v1.0.1
   [8f4d0f93] + Conda v1.0.1
-  [7073ff75] + IJulia v1.9.2
+  [7073ff75] + IJulia v1.9.3
   [682c06a0] + JSON v0.19.0
   [739be429] + MbedTLS v0.6.0
-  [81def892] + VersionParsing v1.1.1
-  [c2297ded] + ZMQ v0.6.3
+  [81def892] + VersionParsing v1.1.2
+  [c2297ded] + ZMQ v0.6.4
   [2a0f44e3] + Base64 
   [ade2ca70] + Dates 
   [8bb1440f] + DelimitedFiles 
@@ -56,10 +55,18 @@ Step 3/3 : RUN julia install.jl
   [cf7118a7] + UUIDs 
   [4ec0a83e] + Unicode 
   Building Conda ──→ `~/.julia/packages/Conda/m7vem/deps/build.log`
+  Building ZMQ ────→ `~/.julia/packages/ZMQ/yClfT/deps/build.log`
   Building MbedTLS → `~/.julia/packages/MbedTLS/Qo8TN/deps/build.log`
-  Building ZMQ ────→ `~/.julia/packages/ZMQ/GA4Xh/deps/build.log`
-  Building IJulia ─→ `~/.julia/packages/IJulia/9RcVi/deps/build.log`
-Removing intermediate container 4c47d0dc4de6
- ---> f7a1e73f1c38
-Successfully built f7a1e73f1c38
+  Building IJulia ─→ `~/.julia/packages/IJulia/iMVN2/deps/build.log`
+Removing intermediate container 89760c2607ee
+ ---> 264894dba1d9
+Step 4/5 : WORKDIR /home
+ ---> Running in 7d232bd66223
+Removing intermediate container 7d232bd66223
+ ---> 31446df03f38
+Step 5/5 : CMD ["/root/.julia/packages/Conda/m7vem/deps/usr/bin/jupyter", "notebook", "--allow-root", "--ip=0.0.0.0", "--NotebookApp.token=''", "--no-browser"]
+ ---> Running in c5760828a266
+Removing intermediate container c5760828a266
+ ---> 13e6e40bab47
+Successfully built 13e6e40bab47
 Successfully tagged juliacn/ubuntu:julia.ijulia
