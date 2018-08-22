@@ -15,7 +15,7 @@ build:
 	docker build --no-cache -t $(NAMESPACE)/$(IMAGE):$(TAG) . | tee docker.log
 
 test:
-	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) julia test.jl | tee test.log
+	docker run --rm -it $(NAMESPACE)/$(IMAGE):$(TAG) julia test.jl 
 
 push:
 	docker push $(NAMESPACE)/$(IMAGE):$(TAG)

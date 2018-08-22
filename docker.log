@@ -1,22 +1,34 @@
-Sending build context to Docker daemon    257kB
-Step 1/4 : FROM juliacn/ubuntu:julia
+Sending build context to Docker daemon  261.6kB
+Step 1/5 : FROM juliacn/ubuntu:julia
+julia: Pulling from juliacn/ubuntu
+c64513b74145: Already exists
+01b8b12bad90: Already exists
+c5d85cf7a05f: Already exists
+b6b268720157: Already exists
+e12192999ff1: Already exists
+cb721daef20c: Already exists
+14c5cf3be899: Already exists
+afb04382ac41: Already exists
+31e99c676759: Already exists
+Digest: sha256:1af4c1a493e69c01c4d82320d6b3dd0928711244e08e8981adbe258b6f27a3b9
+Status: Downloaded newer image for juliacn/ubuntu:julia
  ---> 231c635e1bdd
-Step 2/4 : COPY install.jl .
- ---> 2327915cf307
-Step 3/4 : COPY test.jl .
- ---> 57d096a02cbf
-Step 4/4 : RUN julia install.jl
- ---> Running in 761c276a5608
+Step 2/5 : COPY install.jl .
+ ---> 0d93d4ede08b
+Step 3/5 : COPY test.jl .
+ ---> f1df4a1244dd
+Step 4/5 : RUN julia install.jl
+ ---> Running in a83d617c57b5
    Cloning default registries into /root/.julia/registries
    Cloning registry General from "https://github.com/JuliaRegistries/General.git"
-[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [===================================>     ]  86.2 %[2K[?25h  Updating registry at `~/.julia/registries/General`
+[?25l    Fetching: [>                                        ]  0.0 %    Fetching: [=====================================>   ]  91.8 %[2K[?25h  Updating registry at `~/.julia/registries/General`
   Updating git-repo `https://github.com/JuliaRegistries/General.git`
 [?25l[2K[?25h   Cloning git-repo `https://github.com/JuliaPy/Conda.jl`
 [?25l    Fetching: [>                                        ]  0.0 %[2K[?25h  Updating git-repo `https://github.com/JuliaPy/Conda.jl`
 [?25l    Fetching: [>                                        ]  0.0 %[2K[?25h Resolving package versions...
  Installed VersionParsing ─ v1.1.2
- Installed JSON ─────────── v0.19.0
  Installed Compat ───────── v1.0.1
+ Installed JSON ─────────── v0.19.0
   Updating `~/.julia/environments/v1.0/Project.toml`
   [8f4d0f93] + Conda v1.0.1+ #master (https://github.com/JuliaPy/Conda.jl)
   Updating `~/.julia/environments/v1.0/Manifest.toml`
@@ -59,6 +71,51 @@ Step 4/4 : RUN julia install.jl
   [1914dd2f] + MacroTools v0.4.4
   [438e738f] + PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
   Building PyCall → `~/.julia/packages/PyCall/0s2IJ/deps/build.log`
+[91m[ Info: Running `conda list` in root environment
+[0m# packages in environment at /root/.julia/packages/Conda/m7vem/deps/usr:
+#
+# Name                    Version                   Build  Channel
+asn1crypto                0.24.0                   py36_0  
+blas                      1.0                         mkl  
+ca-certificates           2018.03.07                    0  
+certifi                   2018.8.13                py36_0  
+cffi                      1.11.5           py36h9745a5d_0  
+chardet                   3.0.4            py36h0f667ec_1  
+conda                     4.5.10                   py36_0  
+conda-env                 2.6.0                h36134e3_1  
+cryptography              2.2.2            py36h14c3975_0  
+idna                      2.6              py36h82fb2a8_1  
+intel-openmp              2018.0.3                      0  
+libedit                   3.1.20170329         h6b74fdf_2  
+libffi                    3.2.1                hd88cf55_4  
+libgcc-ng                 7.2.0                hdf63c60_3  
+libgfortran-ng            7.3.0                hdf63c60_0  
+libstdcxx-ng              7.2.0                hdf63c60_3  
+mkl                       2018.0.3                      1  
+mkl_fft                   1.0.4            py36h4414c95_1  
+mkl_random                1.0.1            py36h4414c95_1  
+ncurses                   6.1                  hf484d3e_0  
+numpy                     1.15.0           py36h1b885b7_0  
+numpy-base                1.15.0           py36h3dfced4_0  
+openssl                   1.0.2p               h14c3975_0  
+pip                       10.0.1                   py36_0  
+pycosat                   0.6.3            py36h0a5515d_0  
+pycparser                 2.18             py36hf9f622e_1  
+pyopenssl                 18.0.0                   py36_0  
+pysocks                   1.6.8                    py36_0  
+python                    3.6.5                hc3d631a_2  
+readline                  7.0                  ha6073c6_4  
+requests                  2.18.4           py36he2e5f8d_1  
+ruamel_yaml               0.15.37          py36h14c3975_2  
+setuptools                39.2.0                   py36_0  
+six                       1.11.0           py36h372c433_1  
+sqlite                    3.23.1               he433501_0  
+tk                        8.6.7                hc745277_3  
+urllib3                   1.22             py36hbe7ace6_0  
+wheel                     0.31.1                   py36_0  
+xz                        5.2.4                h14c3975_4  
+yaml                      0.1.7                had09818_2  
+zlib                      1.2.11               ha838bed_2  
 Collecting cython
   Downloading https://files.pythonhosted.org/packages/19/8e/32b280abb0947a96cdbb8329fb2014851a21fc1d099009f946ea8a8202c3/Cython-0.28.5-cp36-cp36m-manylinux1_x86_64.whl (3.4MB)
 Installing collected packages: cython
@@ -96,7 +153,108 @@ setuptools   39.2.0
 six          1.11.0   
 urllib3      1.22     
 wheel        0.31.1   
-Removing intermediate container 761c276a5608
- ---> c541ccc3718b
-Successfully built c541ccc3718b
+Removing intermediate container a83d617c57b5
+ ---> 33cd53f0500f
+Step 5/5 : RUN julia test.jl
+ ---> Running in bf69ee5d01d4
+   Testing PyCall
+    Status `/tmp/tmpZZ3F9h/Manifest.toml`
+  [34da2185] Compat v1.0.1
+  [8f4d0f93] Conda v1.0.1+ #master (https://github.com/JuliaPy/Conda.jl)
+  [682c06a0] JSON v0.19.0
+  [1914dd2f] MacroTools v0.4.4
+  [438e738f] PyCall v1.18.0+ #master (https://github.com/JuliaPy/PyCall.jl)
+  [81def892] VersionParsing v1.1.2
+  [2a0f44e3] Base64  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Base64`]
+  [ade2ca70] Dates  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Dates`]
+  [8bb1440f] DelimitedFiles  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/DelimitedFiles`]
+  [8ba89e20] Distributed  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Distributed`]
+  [b77e0a4c] InteractiveUtils  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/InteractiveUtils`]
+  [76f85450] LibGit2  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/LibGit2`]
+  [8f399da3] Libdl  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Libdl`]
+  [37e2e46d] LinearAlgebra  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/LinearAlgebra`]
+  [56ddb016] Logging  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Logging`]
+  [d6f4376e] Markdown  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Markdown`]
+  [a63ad114] Mmap  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Mmap`]
+  [44cfe95a] Pkg  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Pkg`]
+  [de0858da] Printf  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Printf`]
+  [3fa0cd96] REPL  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/REPL`]
+  [9a3f8284] Random  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Random`]
+  [ea8e919c] SHA  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/SHA`]
+  [9e88b42a] Serialization  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Serialization`]
+  [1a1011a3] SharedArrays  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/SharedArrays`]
+  [6462fe0b] Sockets  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Sockets`]
+  [2f01184e] SparseArrays  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/SparseArrays`]
+  [10745b16] Statistics  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Statistics`]
+  [8dfed614] Test  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Test`]
+  [cf7118a7] UUIDs  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/UUIDs`]
+  [4ec0a83e] Unicode  [`/usr/local/julia/bin/../share/julia/stdlib/v1.0/Unicode`]
+[91m┌ Info: Python version 3.6.5 from /root/.julia/packages/Conda/m7vem/deps/usr/lib/libpython3.6m, PYTHONHOME=/root/.julia/packages/Conda/m7vem/deps/usr:/root/.julia/packages/Conda/m7vem/deps/usr
+│ ENV[PYTHONPATH]=
+│ ENV[PYTHONHOME]=
+└ ENV[PYTHONEXECUTABLE]=
+[0m[91m[ Info: Installing zmq via the Conda pyzmq package...
+[0m[91m[ Info: Running `conda install -y pyzmq` in root environment
+[0mSolving environment: ...working... done
+[91mzeromq-4.2.5         | 567 KB    |            |   0% [0m[91mzeromq-4.2.5         | 567 KB    | 8          |   8% [0m[91mzeromq-4.2.5         | 567 KB    | #######1   |  72% [0m[91mzeromq-4.2.5         | 567 KB    | ########## | 100% [0m[91m
+pyzmq-17.1.2         | 454 KB    |            |   0% [0m[91mpyzmq-17.1.2         | 454 KB    | #####5     |  56% [0m[91mpyzmq-17.1.2         | 454 KB    | ########6  |  86% [0m[91mpyzmq-17.1.2         | 454 KB    | ########## | 100% [0m[91m
+libsodium-1.0.16     | 302 KB    |            |   0% [0m[91mlibsodium-1.0.16     | 302 KB    | #####1     |  52% [0m[91mlibsodium-1.0.16     | 302 KB    | ########## | 100% [0m
+## Package Plan ##
+
+  environment location: /root/.julia/packages/Conda/m7vem/deps/usr
+
+  added / updated specs: 
+    - pyzmq
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    zeromq-4.2.5               |       hf484d3e_0         567 KB
+    pyzmq-17.1.2               |   py36h14c3975_0         454 KB
+    libsodium-1.0.16           |       h1bed415_0         302 KB
+    ------------------------------------------------------------
+                                           Total:         1.3 MB
+
+The following NEW packages will be INSTALLED:
+
+    libsodium: 1.0.16-h1bed415_0    
+    pyzmq:     17.1.2-py36h14c3975_0
+    zeromq:    4.2.5-hf484d3e_0     
+
+
+Downloading and Extracting Packages
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+[91m
+[0m[91m[ Info: Running `conda remove -y pyzmq` in root environment
+[0mSolving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /root/.julia/packages/Conda/m7vem/deps/usr
+
+  removed specs: 
+    - pyzmq
+
+
+The following packages will be REMOVED:
+
+    pyzmq: 17.1.2-py36h14c3975_0
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+Test Summary: | Pass  Total
+PyCall        |  429    429
+Test Summary: | Pass  Total
+pydef         |    6      6
+Test Summary: | Pass  Total
+pycall!       |   16     16
+   Testing PyCall tests passed 
+Removing intermediate container bf69ee5d01d4
+ ---> da17b07dbdc6
+Successfully built da17b07dbdc6
 Successfully tagged juliacn/ubuntu:julia.pycall
